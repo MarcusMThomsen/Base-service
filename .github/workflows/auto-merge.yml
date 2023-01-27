@@ -12,7 +12,7 @@ jobs:
         with:
           alert-lookup: true
           compat-lookup: true
-          github-token: "${{ secrets.GITHUB_TOKEN }}"
+          github-token: "${{ secrets.PAT_TOKEN }}"
       - name: Approve PR
         if: ${{steps.metadata.outputs.update-type == 'version-update:semver-minor' || steps.metadata.outputs.update-type == 'version-update:semver-patch'}}
         run: gh pr review --approve "$PR_URL"
